@@ -17,12 +17,12 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
-    @PostMapping("/create")
+    @PostMapping
     public ResponseEntity<Task> createTask(@RequestBody TaskCreateDto taskCreateDTO) {
         Task createdTask = taskService.createTask(taskCreateDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTask);
     }
-    @GetMapping("")
+    @GetMapping
     public Page<Task> getTasks(
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String priority,
@@ -38,7 +38,7 @@ public class TaskController {
         Task updatedTask = taskService.updateTask(id, taskDetails);
         return ResponseEntity.ok(updatedTask);
     }
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
         taskService.deleteTask(id);
         return ResponseEntity.noContent().build();
