@@ -154,8 +154,8 @@ Follow these steps to set up and run the project on your local machine:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/thy-todoapp.git
-   cd thy-todoapp
+   git clone https://github.com/emrecansonmez/thy-todoapp-java-backend.git
+   cd thy-todoapp-java-backend
    ```
 
 2. **Install Maven Dependencies**:
