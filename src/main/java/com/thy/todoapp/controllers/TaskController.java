@@ -3,6 +3,7 @@ package com.thy.todoapp.controllers;
 import com.thy.todoapp.dtos.TaskCreateDto;
 import com.thy.todoapp.entities.Task;
 import com.thy.todoapp.services.TaskService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,11 +12,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/tasks")
 public class TaskController {
 
-    @Autowired
-    private TaskService taskService;
+
+    private final TaskService taskService;
 
     @PostMapping
     public ResponseEntity<Task> createTask(@RequestBody TaskCreateDto taskCreateDTO) {
